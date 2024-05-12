@@ -9,13 +9,13 @@ Hardware specification:
 
 PC desktop LGA 1151, Intel i7 8700, SSD M2.SATA 1 TB, RAM 32 GB DDR4, VGA card 2 GB
 
-![alt text]([http://url/to/img.png](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic1.png)
+![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic1.png)
 
-![alt text]([http://url/to/img.png](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic2.png)
+![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic2.png)
 
 conn=/H/localhost/S/3200
 
-![alt text]([http://url/to/img.png](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic3.png)
+![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic3.png)
 
 client : 001
 
@@ -23,19 +23,19 @@ uid : DEVELOPER
 
 pas : ABAPtr1909
 
-![alt text]([http://url/to/img.png](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic4.png)
+![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic4.png)
 
 System Status 
 
-![alt text]([http://url/to/img.png](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic5.png)
+![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic5.png)
 
 Product version
 
-![alt text]([http://url/to/img.png](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic6.png)
+![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic6.png)
 
 test abap program (tcode: SE38)
 
-![alt text]([http://url/to/img.png](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic7.png)
+![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic7.png)
 
 test abap program (eclipse)
 
