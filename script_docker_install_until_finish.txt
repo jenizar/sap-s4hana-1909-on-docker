@@ -1,0 +1,408 @@
+jenizar@rogb360:~/Downloads$ wget https://download.docker.com/linux/ubuntu/gpg
+--2024-05-07 10:15:00--  https://download.docker.com/linux/ubuntu/gpg
+Resolving download.docker.com (download.docker.com)... 108.138.141.122, 108.138.141.80, 108.138.141.78, ...
+Connecting to download.docker.com (download.docker.com)|108.138.141.122|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3817 (3,7K) [binary/octet-stream]
+Saving to: ‘gpg’
+
+gpg                 100%[===================>]   3,73K  --.-KB/s    in 0s      
+
+2024-05-07 10:15:01 (1006 MB/s) - ‘gpg’ saved [3817/3817]
+
+jenizar@rogb360:~/Downloads$ sudo apt-key add gpg
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+jenizar@rogb360:~/Downloads$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg -dearmor -o /usr/share/keyrings/docker-archieve-keyring.gpg
+gpg: conflicting commands
+curl: (23) Failed writing body
+jenizar@rogb360:~/Downloads$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg -dearmor -o /usr/share/keyrings/docker-archieve-keyring.gpg
+gpg: conflicting commands
+curl: (23) Failed writing body
+jenizar@rogb360:~/Downloads$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+jenizar@rogb360:~/Downloads$ sudo apt-get update
+Hit:1 http://id.archive.ubuntu.com/ubuntu jammy InRelease
+Get:2 http://id.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Hit:3 https://dl.google.com/linux/chrome/deb stable InRelease                  
+Hit:4 http://id.archive.ubuntu.com/ubuntu jammy-backports InRelease            
+Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Fetched 119 kB in 2s (78,1 kB/s)
+Reading package lists... Done
+jenizar@rogb360:~/Downloads$ sudo apt-get install ./docker-desktop-4.18.0-amd64.deb
+Reading package lists... Done
+E: Unsupported file ./docker-desktop-4.18.0-amd64.deb given on commandline
+jenizar@rogb360:~/Downloads$ ls
+docker-desktop-4.29.0-amd64.deb         gpg
+eclipse-inst-jre-linux64.tar.gz         jdk-22_linux-x64_bin.deb
+google-chrome-stable_current_amd64.deb  SAP_GUI_for_Java.rar
+jenizar@rogb360:~/Downloads$ sudo apt-get install ./docker-desktop-4.29.0-amd64.deb
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Note, selecting 'docker-desktop' instead of './docker-desktop-4.29.0-amd64.deb'
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ docker-desktop : Depends: docker-ce-cli but it is not installable
+E: Unable to correct problems, you have held broken packages.
+jenizar@rogb360:~/Downloads$ sudo apt install -y docker-ce docker-ce-cli containerd.io
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package docker-ce is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'docker-ce' has no installation candidate
+E: Unable to locate package docker-ce-cli
+E: Unable to locate package containerd.io
+E: Couldn't find any package by glob 'containerd.io'
+jenizar@rogb360:~/Downloads$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg -dearmor -o /usr/share/keyrings/docker-archieve-keyring.gpg
+gpg: conflicting commands
+curl: (23) Failed writing body
+jenizar@rogb360:~/Downloads$ sudo apt-get install ./docker-desktop-4.29.0-amd64.deb
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Note, selecting 'docker-desktop' instead of './docker-desktop-4.29.0-amd64.deb'
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ docker-desktop : Depends: docker-ce-cli but it is not installable
+E: Unable to correct problems, you have held broken packages.
+jenizar@rogb360:~/Downloads$ echo $(lsb_release -cs)
+jammy
+jenizar@rogb360:~/Downloads$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20230311ubuntu0.22.04.1).
+ca-certificates set to manually installed.
+curl is already the newest version (7.81.0-1ubuntu1.16).
+software-properties-common is already the newest version (0.99.22.9).
+software-properties-common set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libwpe-1.0-1 libwpebackend-fdo-1.0-1
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  apt-transport-https
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 1.510 B of archives.
+After this operation, 170 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://id.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.12 [1.510 B]
+Fetched 1.510 B in 1s (1.702 B/s)              
+Selecting previously unselected package apt-transport-https.
+(Reading database ... 201004 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.4.12_all.deb ...
+Unpacking apt-transport-https (2.4.12) ...
+Setting up apt-transport-https (2.4.12) ...
+jenizar@rogb360:~/Downloads$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+jenizar@rogb360:~/Downloads$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu `lsb_release -cs` test"
+Repository: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy test'
+Description:
+Archive for codename: jammy components: test
+More info: https://download.docker.com/linux/ubuntu
+Adding repository.
+Press [ENTER] to continue or Ctrl-c to cancel.
+Adding deb entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
+Adding disabled deb-src entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
+Get:1 https://download.docker.com/linux/ubuntu jammy InRelease [48,8 kB]
+Hit:2 https://dl.google.com/linux/chrome/deb stable InRelease
+Get:3 https://download.docker.com/linux/ubuntu jammy/test amd64 Packages [42,8 kB]
+Hit:4 http://id.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:5 http://id.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:6 http://id.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Hit:7 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Fetched 91,7 kB in 3s (30,4 kB/s)
+Reading package lists... Done
+W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+jenizar@rogb360:~/Downloads$ sudo apt update
+Hit:1 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 https://download.docker.com/linux/ubuntu jammy InRelease
+Hit:3 http://id.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:4 http://id.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:5 http://id.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:6 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Fetched 110 kB in 3s (32,2 kB/s)   
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+jenizar@rogb360:~/Downloads$ sudo apt install -y docker-ce docker-ce-cli containerd.io
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libwpe-1.0-1 libwpebackend-fdo-1.0-1
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  docker-buildx-plugin docker-ce-rootless-extras docker-compose-plugin git
+  git-man liberror-perl libslirp0 pigz slirp4netns
+Suggested packages:
+  aufs-tools cgroupfs-mount | cgroup-lite git-daemon-run | git-daemon-sysvinit
+  git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+The following NEW packages will be installed:
+  containerd.io docker-buildx-plugin docker-ce docker-ce-cli
+  docker-ce-rootless-extras docker-compose-plugin git git-man liberror-perl
+  libslirp0 pigz slirp4netns
+0 upgraded, 12 newly installed, 0 to remove and 3 not upgraded.
+Need to get 125 MB of archives.
+After this operation, 455 MB of additional disk space will be used.
+Get:1 https://download.docker.com/linux/ubuntu jammy/test amd64 containerd.io amd64 1.6.31-1 [29,8 MB]
+Get:2 http://id.archive.ubuntu.com/ubuntu jammy/universe amd64 pigz amd64 2.6-1 [63,6 kB]
+Get:3 http://id.archive.ubuntu.com/ubuntu jammy/main amd64 liberror-perl all 0.17029-1 [26,5 kB]
+Get:4 http://id.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git-man all 1:2.34.1-1ubuntu1.10 [954 kB]
+Get:5 http://id.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.10 [3.166 kB]
+Get:6 http://id.archive.ubuntu.com/ubuntu jammy/main amd64 libslirp0 amd64 4.6.1-1build1 [61,5 kB]
+Get:7 http://id.archive.ubuntu.com/ubuntu jammy/universe amd64 slirp4netns amd64 1.0.1-2 [28,2 kB]
+Get:8 https://download.docker.com/linux/ubuntu jammy/test amd64 docker-buildx-plugin amd64 0.14.0-1~ubuntu.22.04~jammy [29,7 MB]
+Get:9 https://download.docker.com/linux/ubuntu jammy/test amd64 docker-ce-cli amd64 5:26.1.1-1~ubuntu.22.04~jammy [14,6 MB]
+Get:10 https://download.docker.com/linux/ubuntu jammy/test amd64 docker-ce amd64 5:26.1.1-1~ubuntu.22.04~jammy [25,3 MB]
+Get:11 https://download.docker.com/linux/ubuntu jammy/test amd64 docker-ce-rootless-extras amd64 5:26.1.1-1~ubuntu.22.04~jammy [9.321 kB]
+Get:12 https://download.docker.com/linux/ubuntu jammy/test amd64 docker-compose-plugin amd64 2.27.0-1~ubuntu.22.04~jammy [12,5 MB]
+Fetched 125 MB in 22s (5.673 kB/s)                                             
+Selecting previously unselected package pigz.
+(Reading database ... 201008 files and directories currently installed.)
+Preparing to unpack .../00-pigz_2.6-1_amd64.deb ...
+Unpacking pigz (2.6-1) ...
+Selecting previously unselected package containerd.io.
+Preparing to unpack .../01-containerd.io_1.6.31-1_amd64.deb ...
+Unpacking containerd.io (1.6.31-1) ...
+Selecting previously unselected package docker-buildx-plugin.
+Preparing to unpack .../02-docker-buildx-plugin_0.14.0-1~ubuntu.22.04~jammy_amd6
+4.deb ...
+Unpacking docker-buildx-plugin (0.14.0-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-ce-cli.
+Preparing to unpack .../03-docker-ce-cli_5%3a26.1.1-1~ubuntu.22.04~jammy_amd64.d
+eb ...
+Unpacking docker-ce-cli (5:26.1.1-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../04-docker-ce_5%3a26.1.1-1~ubuntu.22.04~jammy_amd64.deb .
+..
+Unpacking docker-ce (5:26.1.1-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-ce-rootless-extras.
+Preparing to unpack .../05-docker-ce-rootless-extras_5%3a26.1.1-1~ubuntu.22.04~j
+ammy_amd64.deb ...
+Unpacking docker-ce-rootless-extras (5:26.1.1-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package docker-compose-plugin.
+Preparing to unpack .../06-docker-compose-plugin_2.27.0-1~ubuntu.22.04~jammy_amd
+64.deb ...
+Unpacking docker-compose-plugin (2.27.0-1~ubuntu.22.04~jammy) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../07-liberror-perl_0.17029-1_all.deb ...
+Unpacking liberror-perl (0.17029-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../08-git-man_1%3a2.34.1-1ubuntu1.10_all.deb ...
+Unpacking git-man (1:2.34.1-1ubuntu1.10) ...
+Selecting previously unselected package git.
+Preparing to unpack .../09-git_1%3a2.34.1-1ubuntu1.10_amd64.deb ...
+Unpacking git (1:2.34.1-1ubuntu1.10) ...
+Selecting previously unselected package libslirp0:amd64.
+Preparing to unpack .../10-libslirp0_4.6.1-1build1_amd64.deb ...
+Unpacking libslirp0:amd64 (4.6.1-1build1) ...
+Selecting previously unselected package slirp4netns.
+Preparing to unpack .../11-slirp4netns_1.0.1-2_amd64.deb ...
+Unpacking slirp4netns (1.0.1-2) ...
+Setting up liberror-perl (0.17029-1) ...
+Setting up docker-buildx-plugin (0.14.0-1~ubuntu.22.04~jammy) ...
+Setting up containerd.io (1.6.31-1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service →
+ /lib/systemd/system/containerd.service.
+Setting up docker-compose-plugin (2.27.0-1~ubuntu.22.04~jammy) ...
+Setting up docker-ce-cli (5:26.1.1-1~ubuntu.22.04~jammy) ...
+Setting up libslirp0:amd64 (4.6.1-1build1) ...
+Setting up pigz (2.6-1) ...
+Setting up git-man (1:2.34.1-1ubuntu1.10) ...
+Setting up docker-ce-rootless-extras (5:26.1.1-1~ubuntu.22.04~jammy) ...
+Setting up slirp4netns (1.0.1-2) ...
+Setting up docker-ce (5:26.1.1-1~ubuntu.22.04~jammy) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /li
+b/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/sy
+stemd/system/docker.socket.
+Setting up git (1:2.34.1-1ubuntu1.10) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.7) ...
+jenizar@rogb360:~/Downloads$ docker -v
+Docker version 26.1.1, build 4cf5afa
+jenizar@rogb360:~/Downloads$ sudo docker --version
+Docker version 26.1.1, build 4cf5afa
+jenizar@rogb360:~/Downloads$ systemctl docker status
+Unknown command verb docker.
+jenizar@rogb360:~/Downloads$ systemctl status docker
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset>
+     Active: active (running) since Tue 2024-05-07 10:32:32 WIB; 3min 4s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 13556 (dockerd)
+      Tasks: 17
+     Memory: 31.2M
+        CPU: 577ms
+     CGroup: /system.slice/docker.service
+             └─13556 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/con>
+
+Mei 07 10:32:31 rogb360 systemd[1]: Starting Docker Application Container Engin>
+Mei 07 10:32:31 rogb360 dockerd[13556]: time="2024-05-07T10:32:31.546238007+07:>
+Mei 07 10:32:31 rogb360 dockerd[13556]: time="2024-05-07T10:32:31.547144849+07:>
+Mei 07 10:32:31 rogb360 dockerd[13556]: time="2024-05-07T10:32:31.757297338+07:>
+Mei 07 10:32:32 rogb360 dockerd[13556]: time="2024-05-07T10:32:32.191654473+07:>
+Mei 07 10:32:32 rogb360 dockerd[13556]: time="2024-05-07T10:32:32.257187025+07:>
+Mei 07 10:32:32 rogb360 dockerd[13556]: time="2024-05-07T10:32:32.257549995+07:>
+Mei 07 10:32:32 rogb360 dockerd[13556]: time="2024-05-07T10:32:32.459433391+07:>
+Mei 07 10:32:32 rogb360 systemd[1]: Started Docker Application Container Engine.
+
+jenizar@rogb360:~/Downloads$ docker pull sapse/abap-platform-trial:1909
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/images/create?fromImage=sapse%2Fabap-platform-trial&tag=1909": dial unix /var/run/docker.sock: connect: permission denied
+jenizar@rogb360:~/Downloads$ sudo docker pull sapse/abap-platform-trial:1909
+Error response from daemon: manifest for sapse/abap-platform-trial:1909 not found: manifest unknown: manifest unknown
+jenizar@rogb360:~/Downloads$ sudo docker pull sapse/abap-platform-trial:1909_SP01
+1909_SP01: Pulling from sapse/abap-platform-trial
+37a7980bc42a: Pull complete 
+a4e6194fb2aa: Pull complete 
+aeede47e4309: Pull complete 
+5c3b68fd358e: Pull complete 
+e12b77baa2d4: Pull complete 
+5e7ce4402b9d: Pull complete 
+3f1a9716f045: Pull complete 
+550462b9199e: Pull complete 
+28814cf9ec1c: Pull complete 
+c7b8909b707a: Pull complete 
+399a82789f04: Pull complete 
+41f70c305eaa: Pull complete 
+d81a745a5ba5: Pull complete 
+Digest: sha256:092b83fd003873f058e95fdc98b0ac491aac9b40245f4a65a908e5346eb14100
+Status: Downloaded newer image for sapse/abap-platform-trial:1909_SP01
+docker.io/sapse/abap-platform-trial:1909_SP01
+jenizar@rogb360:~/Downloads$ docker run --stop-timeout 3600 -i --name a4h -h vhcala4hci -p 3200:3200 -p 3300:3300 -p 8443:8443 -p 30213:30213 -p 50000:50000 -p 50001:50001 sapse/abap-platform-trial:1909 -skip-limits-check
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+jenizar@rogb360:~/Downloads$ sudo docker run --stop-timeout 3600 -i --name a4h -h vhcala4hci -p 3200:3200 -p 3300:3300 -p 8443:8443 -p 30213:30213 -p 50000:50000 -p 50001:50001 sapse/abap-platform-trial:1909 -skip-limits-check
+[sudo] password for jenizar: 
+Unable to find image 'sapse/abap-platform-trial:1909' locally
+docker: Error response from daemon: manifest for sapse/abap-platform-trial:1909 not found: manifest unknown: manifest unknown.
+See 'docker run --help'.
+jenizar@rogb360:~/Downloads$ sudo docker run --stop-timeout 3600 -i --name a4h -h vhcala4hci -p 3200:3200 -p 3300:3300 -p 8443:8443 -p 30213:30213 -p 50000:50000 -p 50001:50001 sapse/abap-platform-trial:1909_SP01 -skip-limits-check
+
+The SAP Developer Center Software Developer License Agreement has been accepted
+because the file /agree_to_SAP_license exists
+You can read the license text in the file /SAP_COMMUNITY_DEVELOPER_License
+in the image.
+Hint: docker exec -it a4h less /SAP_COMMUNITY_DEVELOPER_License
+
+The file /agree_to_SAP_license exists because either you restarted a container,
+or you created the file manually, or you committed the file to your private image.
+If you no longer agree to SAP Developer Center Software Developer License Agreenement,
+please remove the file /agree_to_SAP_license from your container or image.
+Hint: docker exec -it a4h rm /agree_to_SAP_license
+
+WARNING: the following system limits are below recommended values:
+  (sysctl kernel.shmmni = 4096) < 32768
+  (sysctl vm.max_map_count = 65530) < 2147483647
+  (sysctl fs.aio-max-nr = 65536) < 18446744073709551615
+Hint: consider adding these parameters to your docker run command:
+  --sysctl kernel.shmmni=32768
+Hint: if you are on Linux, consider running the following system commands:
+  sudo sysctl vm.max_map_count=2147483647
+  sudo sysctl fs.aio-max-nr=18446744073709551615
+sapinit: starting
+start hostcontrol using profile /usr/sap/hostctrl/exe/host_profile
+Impromptu CCC initialization by 'rscpCInit'.
+  See SAP note 1266393.
+Impromptu CCC initialization by 'rscpCInit'.
+  See SAP note 1266393.
+sapinit: started, pid=13
+
+HDB: starting
+
+07.05.2024 05:17:30
+Start
+OK
+
+07.05.2024 05:21:32
+StartWait
+OK
+HDB: started, pid=605
+
+hdb_license_update: starting
+---
+Retrieving HDB license information
+---
+HDB Hardware Key   : G3808078384
+HDB Expiration Date: 2025-06-01 23:59:59
+Days to expire     : 390
+---
+Not updating HDB license: the file /opt/sap/HDB_license was not found
+---
+hdb_license_update: started, pid=2066
+
+asabap_license_update: starting
+---
+Retrieving AS ABAP license information
+---
+SAP License Key Administration  -  Copyright (C) 2003 - 2016 SAP AG
+
+System ID. . . . : A4H
+Hardware Key . . : J1851296352        (of this computer)
+Installation No. : *** not yet assigned ***
+System No. . . . : *** not yet assigned ***
+Release. . . . . : 777
+Software products: NetWeaver_HDB
+---
+AS ABAP license can be automatically renewed from the file /opt/sap/ASABAP_license
+Hint: new container     : docker run ... -v <local file path>:/opt/sap/ASABAP_license
+Hint: existing container: docker cp <local file path> <container name>:/opt/sap/ASABAP_license
+---
+Not updating AS ABAP license: the file /opt/sap/ASABAP_license was not found
+---
+asabap_license_update: started, pid=2083
+
+Application Server: starting
+
+07.05.2024 05:21:34
+Start
+OK
+
+07.05.2024 05:21:53
+StartWait
+OK
+Application Server: started, pid=2247
+
+Worker Processes: starting dependencies
+uuidd: starting
+uuidd: started, pid=2616
+Worker Processes: started dependencies
+Worker Processes: starting
+
+07.05.2024 05:21:54
+Start
+OK
+
+07.05.2024 05:22:14
+StartWait
+OK
+Worker Processes: started, pid=2622
+
+*** All services have been started. ***
+***
+*** To stop and be able to safely start again use Ctrl-C
+*** Or use the stop command with timeout: docker stop -t 7200 ...
+***
+*** Have fun! ***
+
+
+
