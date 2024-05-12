@@ -1,6 +1,14 @@
 # sap-s4hana-1909-on-docker
 SAP S4/HANA 1909 on Premise using Docker
 
+System specification:
+
+OS Linux Ubuntu 22.04 LTS, Docker CE (Community Edition) version 26.1.1, build 4cf5afa, SAP GUI for Java 7.80 rev 3, Eclipse IDE for Enterprise Java and Web Developers 2023-12
+
+Hardware specification:
+
+PC desktop LGA 1151, Intel i7 8700, SSD M2.SATA 1 TB, RAM 32 GB DDR4, VGA card 2 GB
+
 references:
 1. https://hub.docker.com/r/sapse/abap-platform-trial   
 2. https://askubuntu.com/questions/1030179/package-docker-ce-has-no-installation-candidate-in-18-04
