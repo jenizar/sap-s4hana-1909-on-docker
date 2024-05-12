@@ -9,6 +9,14 @@ Hardware specification:
 
 PC desktop LGA 1151, Intel i7 8700, SSD M2.SATA 1 TB, RAM 32 GB DDR4, VGA card 2 GB
 
+![alt text](http://url/to/img.png)
+![alt text](http://url/to/img.png)
+![alt text](http://url/to/img.png)
+![alt text](http://url/to/img.png)
+![alt text](http://url/to/img.png)
+![alt text](http://url/to/img.png)
+![alt text](http://url/to/img.png)
+
 references:
 1. https://hub.docker.com/r/sapse/abap-platform-trial   
 2. https://askubuntu.com/questions/1030179/package-docker-ce-has-no-installation-candidate-in-18-04
