@@ -13,15 +13,15 @@ PC desktop LGA 1151, Intel i7 8700, SSD M2.SATA 1 TB, RAM 32 GB DDR4, VGA card 2
 
 Check status docker:
 
-systemctl status docker
+$>systemctl status docker
 
 Start docker:
 
-docker start -ai a4h
+$>docker start -ai a4h
 
 Stop docker:
 
-^C (Ctrl + c)  //  docker stop -t 7200 a4h
+^C (Ctrl + c)  //  $>docker stop -t 7200 a4h
 
 ![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic2.png)
 
