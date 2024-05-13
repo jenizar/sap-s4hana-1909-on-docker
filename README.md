@@ -11,6 +11,18 @@ PC desktop LGA 1151, Intel i7 8700, SSD M2.SATA 1 TB, RAM 32 GB DDR4, VGA card 2
 
 ![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic1.png)
 
+Check status docker:
+
+systemctl status docker
+
+Start docker:
+
+docker start -ai a4h
+
+Stop docker:
+
+^C (Ctrl + c)  //  docker stop -t 7200 a4h
+
 ![alt text](https://github.com/jenizar/sap-s4hana-1909-on-docker/blob/main/screenshot/pic2.png)
 
 conn=/H/localhost/S/3200
@@ -39,6 +51,8 @@ test abap program (tcode: SE38)
 
 test abap program (eclipse)
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/MFVuuwMqXq8/0.jpg)](http://www.youtube.com/watch?v=MFVuuwMqXq8)
+
 references:
 1. https://hub.docker.com/r/sapse/abap-platform-trial   
 2. https://askubuntu.com/questions/1030179/package-docker-ce-has-no-installation-candidate-in-18-04
@@ -48,4 +62,4 @@ references:
 6. https://youtu.be/YH1OrmTT7J0?si=Am9kFd84JQ6R41kS
 7. https://youtu.be/H0GEg8r7P48?si=EhUbQrU9WAq3iiTY
 8. https://youtu.be/H0GEg8r7P48?si=bP00EOIgESDGAKsK
-9. https://youtu.be/MFVuuwMqXq8
+
