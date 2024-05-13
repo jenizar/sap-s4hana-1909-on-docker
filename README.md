@@ -55,6 +55,12 @@ Demo:
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/MFVuuwMqXq8/0.jpg)](http://www.youtube.com/watch?v=MFVuuwMqXq8)
 
+Get license from SAP: https://go.support.sap.com/minisap/#/minisap
+
+choose --> A4H - SAP NetWeaver AS ABAP 7.4 and above (Linux / SAP HANA)
+
+fill name and email address then submit, system automatically download file: A4H_Multiple.txt
+
 references:
 1. https://hub.docker.com/r/sapse/abap-platform-trial   
 2. https://askubuntu.com/questions/1030179/package-docker-ce-has-no-installation-candidate-in-18-04
